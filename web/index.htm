@@ -1,0 +1,87 @@
+<!--/********************************************************************************
+* Vittel Up                                                                     *
+* Project for Vittel to track dehydration and water consumption using an        *
+* arduino Yun and a 1.5 watter bottle.                                          *
+*                                                                               *
+* Copyright (C) 2014 George Koulouris (george.koulouris1@gmail.com)             * 
+*                                                                               *
+* License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html> *
+* This is free software: you are free to change and redistribute it.            *
+* There is NO WARRANTY, to the extent permitted by law.                         *
+*                                                                               *
+*********************************************************************************/-->
+
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Vittel Up</title>
+    <meta name="description" content="A smart Vittel Bottle" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" value="A smart Vittel Bottle">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Vittel Up" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://gcool.info/drinkMe/" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="A smart Vittel Bottle" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="page"></div>
+      <div class="footer"><a href="http://nod-a.com" target="_blank"><img class="logos" src="http://gcool.info/vittelup/img/nod-a.png" /></a><a href="http://cubeek3d.com/" target="_blank"><img class="logos" src="http://gcool.info/vittelup/img/cubeek3d.png" /></a><a href="http://vittel.com/" target="_blank"><img class="logos" src="http://gcool.info/vittelup/img/vittel.png" /></a><a href="http://lepetitfablabdeparis.fr/" target="_blank"><img class="logos" src="http://gcool.info/vittelup/img/lpfp.png" /></div></a>
+    </div>
+
+  <script type="text/template" id="home">
+    <h1>Vittel Up</h1>
+    <div class="slogan">your personnalised water dashboard</div>
+    <div class="graphs"></div>
+    <div style="clear:both"></div>
+    <hr/>
+    <div class="logo"></div>
+    <div class="logoText">HACK IN THE BOTTLE</div>
+  </script>
+
+  <script type="text/template" id="graph">
+    <div class="graph" id="graph<%= ID %>">
+      <div class="graphic" id="<%= ID %>"></div>
+      <div class="graphText"><i class="picto <%= PICTO %>" style="color: <%= COLOR %>"></i><br/><%= ID %><br/><span id="graphText<%= ID %>"><%= VALUE %></span></div>
+    </div>
+  </script>
+
+
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+  <script src="lib/jquery.ui.touch-punch.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="lib/underscore-min.js"></script>
+  <script src="lib/backbone-min.js"></script>
+  <script src="lib/raphael-min.js"></script>
+   <script src="router.js"></script>
+  <script src="views.js"></script>
+  <script src="model.js"></script>
+    
+
+  <script type="text/javascript">
+      var refreshIntervalId = null;
+      var router = new Router();
+      var model = new Model();
+      var homeView = new homeView({model: model});
+
+      router.on('route:home', function(){
+        homeView.render();
+      });
+
+
+     Backbone.history.start();
+  </script>
+
+
+
+</body></html>
