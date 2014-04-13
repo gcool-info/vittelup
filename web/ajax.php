@@ -39,8 +39,8 @@
 	}
 
 	function fetch() {
-		// COnnect to the database
-    	$pdo=new PDO("mysql:dbname=gcoolinf_wp;host=localhost","gcoolinf_wp","CoolOuris=+t");
+		// Connect to the database
+    	$pdo=new PDO("mysql:dbname=YOUR_DB_NAME;host=YOUR_HOST","YOUR_USER","YOUR_PSW");
 
     	$sql = 'Select Drink, Dehydration From vittelup where ID=1';
 

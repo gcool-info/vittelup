@@ -17,7 +17,7 @@
 if (isset($_GET['dehydration']) && isset($_GET['drink'])) {
 
 	// Connext to the databes
-    $pdo=new PDO("mysql:dbname=gcoolinf_wp;host=localhost","gcoolinf_wp","CoolOuris=+t");
+    $pdo=new PDO("mysql:dbname=YOUR_DB_NAME;host=YOUR_HOST","YOUR_USER","YOUR_PSW");
 
     // Update the database values
     $sql = 'UPDATE vittelup SET Dehydration='.htmlspecialchars($_GET['dehydration']).', Drink='.htmlspecialchars($_GET['drink']).' WHERE ID=1';
